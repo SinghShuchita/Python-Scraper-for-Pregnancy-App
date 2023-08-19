@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search ASHA Details</title>
+</head>
+<body>
+    <form action="/" method="post">
+        <label for="sub_centre_name">Name Of Sub-Centre:</label>
+        <input type="text" id="sub_centre_name" name="sub_centre_name" required>
+        <input type="submit" value="Search">
+    </form>
+    <br>
+    {% if results %}
+        <table border="1">
+            <tr>
+                <th>ID No. of ASHA</th>
+                <th>Name Of ASHA</th>
+            </tr>
+            {% for result in results %}
+            <tr>
+                <td>{{ result[0] }}</td>
+                <td>{{ result[1] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+</body>
+</html>
